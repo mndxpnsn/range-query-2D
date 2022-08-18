@@ -6,7 +6,7 @@ public class Main {
 
         for(int i = 0; i < m; ++i) {
             for(int j = 0; j < n; ++j) {
-                mat[i][j] = min + (int)(Math.random() * ((max - min) + 1));
+                mat[i][j] = i * (j + 3) % m ;//min + (int)(Math.random() * ((max - min) + 1));
             }
         }
     }

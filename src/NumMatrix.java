@@ -27,8 +27,7 @@ class NumMatrix {
 
         // Compute query sum of the single element matrix at the origin
         if(m == 0 && n == 0) {
-            dp[m][n] = matrix[m][n];
-            return matrix[m][n];
+            return dp[m][n] = matrix[m][n];
         }
 
         // Recursively compute the 2D queries for matrices with size greater than 1
@@ -39,21 +38,16 @@ class NumMatrix {
 
         // Compute left boundary sum queries
         if(m > 0 && n == 0) {
-            for(int j = 0; j <= m; ++j) {
-                res = res + matrix[j][n];
-                dp[j][n] = res;
-            }
-            return res;
+            res = matrix[m][n] + make_dp(m - 1, n, dp);
         }
 
         // Compute upper boundary sum queries
         if(m == 0 && n > 0) {
-            for(int i = 0; i <= n; ++i) {
-                res = res + matrix[m][i];
-                dp[m][i] = res;
-            }
-            return res;
+            res = matrix[m][n] + make_dp(m, n - 1, dp);
         }
+
+        // Store results in memo table
+        dp[m][n] = res;
 
         return res;
     }
