@@ -30,10 +30,9 @@ class NumMatrix {
             return dp[m][n] = matrix[m][n];
         }
 
-        // Recursively compute the 2D queries for matrices with size greater than 1
+        // Compute the 2D queries for matrices with size greater than 1
         if(m > 0 && n > 0) {
             res = matrix[m][n] + make_dp(m, n - 1, dp) + make_dp(m - 1, n, dp) - make_dp(m - 1, n - 1, dp);
-            dp[m][n] = res;
         }
 
         // Compute left boundary sum queries
