@@ -35,10 +35,10 @@ public class Main {
         // Compute sum of query
         NumMatrix solObj = new NumMatrix(mat);
 
-        int sum_query = solObj.sumRegion(row1, col1, row2, col2);
+        int sumQuery = solObj.sumRegion(row1, col1, row2, col2);
 
         // Print results
-        System.out.println("sum of query: " + sum_query);
+        System.out.println("sum of query: " + sumQuery);
 
     }
 }

@@ -5,8 +5,6 @@ class NumMatrix {
 
     int computeAreas(int m, int n, int[][] areas) {
 
-        int res = 0;
-
         // Indices are out of range
         if(m < 1 || n < 1) {
             return 0;
